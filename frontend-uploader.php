@@ -291,6 +291,8 @@ class Frontend_Uploader {
 		$errors = array();
 		$success = true;
 
+		$post_fields = json_decode( stripslashes( $_POST['form_fields'] ) );
+
 		// Construct post array;
 		$post_array = array(
 			'post_type' =>  isset( $_POST['post_type'] ) && in_array( $_POST['post_type'], $this->settings['enabled_post_types'] ) ? $_POST['post_type'] : 'post',
